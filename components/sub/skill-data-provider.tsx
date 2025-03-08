@@ -6,18 +6,31 @@ import * as Gi from "react-icons/gi";
 import * as Fa from "react-icons/fa";
 import * as Si from "react-icons/si";
 
-type SkillDataProviderProps = {
-  iconName: string;
-  iconFamily: "Gi" | "Fa" | "Si";
+type BaseSkillProps = {
   name: string;
   width: number;
   height: number;
   index: number;
 };
 
+type IconSkillProps = BaseSkillProps & {
+  iconName: string;
+  iconFamily: "Gi" | "Fa" | "Si";
+  src?: never;
+};
+
+type ImageSkillProps = BaseSkillProps & {
+  src: string;
+  iconName?: never;
+  iconFamily?: never;
+};
+
+type SkillDataProviderProps = IconSkillProps | ImageSkillProps;
+
 export const SkillDataProvider = ({
   iconName,
   iconFamily,
+  src,
   name,
   width,
   height,
@@ -34,7 +47,33 @@ export const SkillDataProvider = ({
 
   const animationDelay = 0.1;
 
+  // If src is provided, render image
+  if (src) {
+    return (
+      <motion.div
+        ref={ref}
+        initial="hidden"
+        variants={imageVariants}
+        animate={inView ? "visible" : "hidden"}
+        custom={index}
+        transition={{ delay: index * animationDelay }}
+        className="flex flex-col items-center justify-center"
+      >
+        <img 
+          src={src} 
+          alt={name}
+          width={width}
+          height={height}
+          className="hover:scale-105 transition-transform"
+        />
+        <p className="text-white text-sm mt-2">{name}</p>
+      </motion.div>
+    );
+  }
+
+  // If iconName and iconFamily are provided, render icon
   const getIcon = () => {
+    if (!iconName || !iconFamily) return null;
     switch (iconFamily) {
       case "Gi":
         return Gi[iconName as keyof typeof Gi];
