@@ -1,8 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { COURSES } from "@/constants";
-import { ProjectCard } from "../sub/project-card";
 
 export const Projects = () => {
   return (
@@ -18,24 +16,13 @@ export const Projects = () => {
             transition={{ duration: 0.5 }}
             className="text-gray-300 text-lg max-w-2xl mx-auto"
           >
-            Discover our wide range of courses designed to help you achieve your academic goals.
+            Discover our comprehensive range of courses designed to help you achieve your academic goals. 
+            From undergraduate to postgraduate programs, we offer diverse educational opportunities across multiple disciplines.
           </motion.div>
         </div>
 
-        <div className="h-full w-full grid grid-cols-1 md:grid-cols-3 gap-10 px-10">
-          {COURSES.map((course, i) => (
-            <ProjectCard
-              key={i}
-              title={course.title}
-              text={course.description}
-              image={course.image}
-              link={course.link}
-            />
-          ))}
-        </div>
-
         <motion.a
-          href="https://ie.infradexedu.in/about.php#courses"
+          href="https://ie.infradexedu.in/courses.php"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}

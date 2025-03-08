@@ -28,7 +28,7 @@ export const Skills = () => {
       <div className="w-full h-full absolute">
         <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
           <video
-            className="w-full h-auto"
+            className="w-full h-[130vh] md:h-auto scale-70 md:scale-100 object-cover"
             preload="none"
             playsInline
             loop

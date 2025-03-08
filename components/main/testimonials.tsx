@@ -5,21 +5,21 @@ import { FaQuoteLeft, FaUserGraduate } from "react-icons/fa";
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
+    name: "Muhammad Ibrahim",
     role: "International Student",
-    university: "University of Toronto",
+    university: "University of Dhaka, Bangladesh",
     quote: "The guidance I received was invaluable. They helped me navigate through the complex admission process and made my dream of studying abroad a reality.",
   },
   {
-    name: "Rahul Patel",
+    name: "Junaid",
     role: "Graduate Student",
-    university: "University of Melbourne",
+    university: "Moscow State University, Russia",
     quote: "Their expertise in visa assistance made the entire process smooth. I highly recommend their services to anyone looking to study abroad.",
   },
   {
-    name: "Li Wei",
+    name: "Haroon Rashid",
     role: "Undergraduate Student",
-    university: "University of British Columbia",
+    university: "University of Tehran, Iran",
     quote: "From university selection to accommodation arrangements, they provided comprehensive support throughout my journey.",
   },
 ];
