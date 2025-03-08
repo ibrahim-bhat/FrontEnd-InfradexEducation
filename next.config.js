@@ -2,7 +2,15 @@
 const nextConfig = {
   images: {
     domains: ['your-domain.com'],
-    unoptimized: process.env.NODE_ENV === 'development',
+    unoptimized: true, // This helps with Netlify deployment
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
   },
   async headers() {
     return [
@@ -73,6 +81,8 @@ const nextConfig = {
   generateEtags: true,
   // Handle specific page extensions
   pageExtensions: ['tsx', 'ts', 'jsx', 'js', 'md', 'mdx'],
+  // Output configuration for static exports
+  output: 'standalone',
 };
 
 module.exports = nextConfig;

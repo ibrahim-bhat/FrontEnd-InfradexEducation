@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import * as Gi from "react-icons/gi";
@@ -59,13 +60,15 @@ export const SkillDataProvider = ({
         transition={{ delay: index * animationDelay }}
         className="flex flex-col items-center justify-center"
       >
-        <img 
-          src={src} 
-          alt={name}
-          width={width}
-          height={height}
-          className="hover:scale-105 transition-transform"
-        />
+        <div className="relative" style={{ width: `${width}px`, height: `${height}px` }}>
+          <Image 
+            src={src} 
+            alt={name}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="hover:scale-105 transition-transform object-contain"
+          />
+        </div>
         <p className="text-white text-sm mt-2">{name}</p>
       </motion.div>
     );
