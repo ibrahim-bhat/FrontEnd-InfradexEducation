@@ -1,22 +1,32 @@
-import { FaYoutube, FaFacebook, FaLandmark, FaMosque, FaCanadianMapleLeaf, FaBuilding, FaArchway } from "react-icons/fa";
+import { 
+  FaFlagUsa, 
+  FaLandmark, 
+  FaMosque, 
+  FaGlobeEurope,
+  FaMapMarkedAlt,
+  FaCanadianMapleLeaf, 
+  FaBuilding,
+  FaArchway,
+  FaFacebook
+} from "react-icons/fa";
+import { 
+  GiCastle,
+  GiKangaroo,
+  GiEuropeanFlag,
+  GiMountainCave,
+  GiTempleDoor,
+  GiIndianPalace,
+  GiJapan
+} from "react-icons/gi";
 import {
-  RxDiscordLogo,
-  RxGithubLogo,
   RxInstagramLogo,
   RxTwitterLogo,
   RxLinkedinLogo,
+  RxGithubLogo,
+  RxDiscordLogo
 } from "react-icons/rx";
-import { 
-  GiUsaFlag,
-  GiCastle,
-  GiJapan,
-  GiIndianPalace,
-  GiTempleDoor,
-  GiMountainCave
-} from "react-icons/gi";
-import { SiYourtraveldottv } from "react-icons/si";
 
-type IconFamily = "Gi" | "Fa" | "Si";
+type IconFamily = "Gi" | "Fa";
 
 interface SkillItem {
   skill_name: string;
@@ -28,8 +38,64 @@ interface SkillItem {
 
 export const SKILL_DATA: SkillItem[] = [
   {
-    skill_name: "Europe",
+    skill_name: "USA",
+    iconName: "FaFlagUsa",
+    iconFamily: "Fa",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "UK",
+    iconName: "FaLandmark",
+    iconFamily: "Fa",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "Germany",
+    iconName: "FaGlobeEurope",
+    iconFamily: "Fa",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "Australia",
+    iconName: "GiKangaroo",
+    iconFamily: "Gi",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "New Zealand",
+    iconName: "FaMapMarkedAlt",
+    iconFamily: "Fa",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "Malaysia",
+    iconName: "FaBuilding",
+    iconFamily: "Fa",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "UAE",
+    iconName: "FaMosque",
+    iconFamily: "Fa",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "Poland",
     iconName: "GiCastle",
+    iconFamily: "Gi",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "Europe",
+    iconName: "GiEuropeanFlag",
     iconFamily: "Gi",
     width: 80,
     height: 80,
@@ -49,6 +115,13 @@ export const SKILL_DATA: SkillItem[] = [
     height: 80,
   },
   {
+    skill_name: "Austria",
+    iconName: "GiCastle",
+    iconFamily: "Gi",
+    width: 80,
+    height: 80,
+  },
+  {
     skill_name: "Bangladesh",
     iconName: "GiTempleDoor",
     iconFamily: "Gi",
@@ -64,8 +137,8 @@ export const SKILL_DATA: SkillItem[] = [
   },
   {
     skill_name: "Bhutan",
-    iconName: "SiYourtraveldottv",
-    iconFamily: "Si",
+    iconName: "FaLandmark",
+    iconFamily: "Fa",
     width: 80,
     height: 80,
   },

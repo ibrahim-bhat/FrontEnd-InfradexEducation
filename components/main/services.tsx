@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaGraduationCap, FaPassport, FaPlane } from "react-icons/fa";
+import { FaGraduationCap, FaPassport, FaPlane, FaArrowRight } from "react-icons/fa";
 import { BiBrain, BiBuildings, BiMoney } from "react-icons/bi";
+import Link from "next/link";
 
 const statsData = [
   { number: "20+", label: "Countries" },
@@ -43,6 +44,12 @@ const servicesData = [
   },
 ];
 
+// Helper function to format the service title for the URL
+const getServiceUrl = (title: string): string => {
+  const formattedTitle = title.toLowerCase().replace(/[^a-z0-9]/g, '');
+  return `https://ie.infradexedu.in/usp/service/${formattedTitle}.php`;
+};
+
 export const Services = () => {
   return (
     <section className="relative flex flex-col items-center justify-center py-20">
@@ -73,7 +80,7 @@ export const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             whileHover={{ scale: 1.02 }}
-            className="group relative p-8 bg-[#0300145e] rounded-2xl backdrop-blur-sm border border-[#7042f88b] hover:border-[#7042f8] transition-all"
+            className="group relative p-8 bg-[#0300145e] rounded-2xl backdrop-blur-sm border border-[#7042f88b] hover:border-[#7042f8] transition-all flex flex-col h-full"
           >
             <service.icon className="w-12 h-12 text-[#b49bff] mb-6 group-hover:text-[#7042f8] transition-colors" />
             
@@ -81,9 +88,21 @@ export const Services = () => {
               {service.title}
             </h3>
             
-            <p className="text-gray-300 group-hover:text-gray-200 transition-colors">
+            <p className="text-gray-300 group-hover:text-gray-200 transition-colors mb-6">
               {service.description}
             </p>
+
+            <div className="mt-auto">
+              <Link 
+                href={getServiceUrl(service.title)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors group-hover:text-cyan-300"
+              >
+                <span className="mr-2">Read More</span>
+                <FaArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform duration-300" />
+              </Link>
+            </div>
           </motion.div>
         ))}
       </div>
