@@ -16,7 +16,7 @@ export const Skills = () => {
           <SkillDataProvider
             key={skill.skill_name}
             iconName={skill.iconName}
-            iconFamily={skill.iconFamily as "Gi" | "Fa" | "Si"}
+            iconFamily={skill.iconFamily}
             name={skill.skill_name}
             width={skill.width}
             height={skill.height}
